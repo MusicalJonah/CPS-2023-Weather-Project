@@ -9,7 +9,8 @@ def temperature(location):
     response = requests.get(url, headers=headers)
     data = json.loads(response.text)
     temperature = data["data"]["values"]["temperature"]
-    return temperature
+    farenheit=temperature*9/5+32
+    return int(farenheit)
 
 def place(location):
     api_key = str(os.getenv("TOMORROW_IO_API_KEY"))
@@ -18,4 +19,4 @@ def place(location):
     response = requests.get(url, headers=headers)
     data = json.loads(response.text)
     place = data["location"]["name"]
-    return temperature
+    return place
