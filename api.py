@@ -3,8 +3,8 @@ import os
 import json
 
 def temperature(location):
-    api_key = str(os.getenv("TOMORROW_IO_API_KEY"))
-    url = "https://api.tomorrow.io/v4/weather/realtime?location="+ str(location) +"&apikey=" + api_key
+    apiKey = str(os.getenv("TOMORROW_IO_API_KEY"))
+    url = "https://api.tomorrow.io/v4/weather/realtime?location="+ str(location) +"&apikey=" + apiKey
     headers = {"accept": "application/json"}
     response = requests.get(url, headers=headers)
     data = json.loads(response.text)
@@ -12,11 +12,13 @@ def temperature(location):
     farenheit=temperature*9/5+32
     return int(farenheit)
 
-def place(location):
-    api_key = str(os.getenv("TOMORROW_IO_API_KEY"))
-    url = "https://api.tomorrow.io/v4/weather/realtime?location="+ str(location) +"&apikey=" + api_key
+def place(zipCode):
+    apiKey = str(os.getenv("ZIPCODE_API_KEY"))
+    url = "https://app.zipcodebase.com/api/v1/search?apikey="+ apiKey +"&codes="+ str(zipCode) +"&country=US"
     headers = {"accept": "application/json"}
     response = requests.get(url, headers=headers)
+    print(url)
     data = json.loads(response.text)
-    place = data["location"]["name"]
-    return place
+    city = data["results"][str(zipCode)][0]["city"]
+    state = data["results"][str(zipCode)][0]["state"]
+    return (city + ", " + state)
