@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Perfect Crafty Hare</title>
-    <meta property="og:title" content="Perfect Crafty Hare" />
+    <title>Weather App</title>
+    <meta property="og:title" content="Weather App" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -45,11 +45,15 @@
 
       <div class="home-container">
         <img
-          src="{{image}}"
           alt="image"
+          src="{{image}}"
           class="home-image"
         />
         <h1 class="home-text Heading">
+          <span>Weather for: {{location}}</span>
+          <br />
+          <br />
+          <br />
           <span>{{temperature}} ° F</span>
           <br />
           <br />
@@ -57,13 +61,9 @@
           <br />
           <span>Humidity: {{humidity}}%</span>
           <br />
-          <span>Wind Speed: {{windSpeed}}mph.</span>
+          <span>Wind Speed: {{windSpeed}} mph</span>
           <br />
-          <span>It is {{condition}}.</span>
-          <br />
-        </h1>
-        <h1 class="home-heading">
-          <span>Weather for {{location}}:</span>
+          <span>Current Weather Condition: {{condition}}</span>
           <br />
         </h1>
       </div>
