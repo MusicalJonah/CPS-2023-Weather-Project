@@ -1,11 +1,11 @@
 from flask import Flask, render_template
-import api
-
+from api import weather
 app = Flask(__name__)
 
 @app.route('/<int:location>')
-def temperature(location):
-    return render_template('index.html', temperature=api.temperature(location), location=api.place(location), windSpeed=api.windSpeed(location), pressure=api.pressure(location), humidity=api.humidity(location), condition=api.condition(location), image=api.image(location))
+def weather(location):
+    temperature, windSpeed, pressure, humidity, condition, image, location = weather(location)
+    return render_template('index.html', temperature=temperature, windSpeed=windSpeed, pressure=pressure, humidity=humidity, condition=condition, image=image, location=location)
 
 @app.route('/style.css')
 def styles():
