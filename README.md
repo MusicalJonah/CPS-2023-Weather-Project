@@ -1,3 +1,31 @@
+## Configuration
+
+Before running the application, you need to set your API key as an environment variable. Here's how you can do it:
+
+1. Open your `.bashrc` or `.bash_profile` file:
+
+    ```bash
+    nano ~/.bashrc  # or `nano ~/.bash_profile` if you're on macOS
+    ```
+
+2. Add the following line to the file:
+
+    ```bash
+    export API_KEY=your_api_key
+    ```
+
+    Replace `your_api_key` with your actual API key.
+
+3. Save and close the file.
+
+4. Apply the changes:
+
+    ```bash
+    source ~/.bashrc  # or `source ~/.bash_profile` if you're on macOS
+    ```
+
+Now, every time you open a new terminal session, the `API_KEY` environment variable will be set automatically.
+
 ## Deployment
 
 To deploy the application on a Linux server with systemd, follow these steps:
