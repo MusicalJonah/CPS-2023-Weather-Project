@@ -1,3 +1,5 @@
+## API
+This app uses weatherapi.com to fetch the weather data. There is a free tier with 1 Million Calls/month.
 ## Configuration
 
 Before running the application, you need to set your API key as an environment variable. Here's how you can do it:
