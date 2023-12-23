@@ -12,4 +12,7 @@ venv/
 # Ignore .DS_Store on MacOS
 .DS_Store
 
+# Ignore .vscode folder
+.vscode/
+
 data.json
