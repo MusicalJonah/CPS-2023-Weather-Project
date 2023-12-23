@@ -8,6 +8,7 @@ __pycache__/
 
 # Ignore Python virtual environments
 venv/
+env/
 
 # Ignore .DS_Store on MacOS
 .DS_Store
@@ -15,4 +16,8 @@ venv/
 # Ignore .vscode folder
 .vscode/
 
+# Ignore data.json
 data.json
+
+# Ignore error.log
+error.log
