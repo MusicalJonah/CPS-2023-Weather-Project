@@ -44,21 +44,26 @@
       <link href="./index.css" rel="stylesheet" />
 
       <div class="home-container">
-        <h1 class="home-heading">
-          <span>Weather for {{location}}:</span>
+        <img
+          src="https://play.teleporthq.io/static/svg/default-img.svg"
+          alt="image"
+          class="home-image"
+        />
+        <h1 class="home-text Heading">
+          <span>{{temperature}} ° F</span>
+          <br />
+          <br />
+          <span>Pressure: {{pressure}} mb</span>
+          <br />
+          <span>Humidity: {{humidity}}%</span>
+          <br />
+          <span>Wind Speed: {{windSpeed}}mph.</span>
+          <br />
+          <span>It is {{condition}}.</span>
           <br />
         </h1>
-        <h1 class="home-text02 Heading">
-          <span>{{temperature}}° F</span>
-          <br />
-          <br />
-          <span>Dew Point: {{dewPoint}}° F.</span>
-          <br />
-          <span>Wind Speed: {{windSpeed}}.</span>
-          <br />
-          <span>It is {{cloudCondition}}&nbsp;</span>
-          <span>and {{percipitation}}.</span>
-          <br />
+        <h1 class="home-heading">
+          <span>Weather for {{location}}:</span>
           <br />
         </h1>
       </div>

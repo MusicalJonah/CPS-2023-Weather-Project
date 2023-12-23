@@ -7,12 +7,18 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-.home-heading {
-  height: 40px;
-  padding-top: 100px;
+.home-image {
+  top: 153px;
+  left: 0px;
+  right: 0px;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  position: absolute;
+  object-fit: cover;
 }
-.home-text02 {
-  top: 200px;
+.home-text {
+  top: 240px;
   left: 0px;
   right: 0px;
   width: 464px;
@@ -21,4 +27,9 @@
   position: absolute;
   align-self: center;
   text-align: center;
+}
+.home-heading {
+  height: 0px;
+  align-self: center;
+  padding-top: 100px;
 }
