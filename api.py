@@ -1,6 +1,6 @@
 import requests, os, json
 
-ApiKey = str(os.getenv("WeatherApiKey"))
+ApiKey = str(os.getenv("API_KEY"))
 headers = {"accept": "application/json"}
 
 def weather(zipCode):
