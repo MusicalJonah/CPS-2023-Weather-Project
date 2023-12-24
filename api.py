@@ -6,6 +6,8 @@ headers = {"accept": "application/json"}
 def weather(zipCode):
     url = "https://api.weatherapi.com/v1/current.json?key="+ ApiKey +"&q="+ str(zipCode) +"&aqi=no"
     response = requests.get(url, headers=headers)
+    print (response.text)
+    print (url)
     data = json.loads(response.text)
     temperature = data["current"]["temp_f"]
     windSpeed = data["current"]["wind_mph"]

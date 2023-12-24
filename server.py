@@ -1,12 +1,19 @@
 from flask import Flask, render_template
 import os
 import logging
+from logging.handlers import RotatingFileHandler
 import api
 
 app = Flask(__name__)
 
 # Set up logging
 logging.basicConfig(filename='error.log', level=logging.ERROR)
+
+# Set up Werkzeug logging
+werkzeug_logger = logging.getLogger('werkzeug')
+handler = RotatingFileHandler('access.log', maxBytes=10000, backupCount=1)
+werkzeug_logger.addHandler(handler)
+werkzeug_logger.setLevel(logging.INFO)
 
 @app.route('/<int:location>')
 def weather(location):
@@ -16,10 +23,3 @@ def weather(location):
     except Exception as e:
         app.logger.error(f"Error occurred when fetching weather for location {location}: {e}")
         return "An error occurred. Please try again later.", 500
-
-@app.route('/favicon.ico')
-def favicon():
-    return render_template('favicon.ico')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')

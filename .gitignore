@@ -20,4 +20,4 @@ env/
 data.json
 
 # Ignore error.log
-error.log
+*.log
