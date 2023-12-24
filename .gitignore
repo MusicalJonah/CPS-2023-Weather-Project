@@ -8,7 +8,7 @@ __pycache__/
 
 # Ignore Python virtual environments
 venv/
-env/
+weatherApp/
 
 # Ignore .DS_Store on MacOS
 .DS_Store
